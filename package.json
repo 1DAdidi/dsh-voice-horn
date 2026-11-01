@@ -1,0 +1,46 @@
+{
+  "name": "dsh-voice-horn",
+  "version": "0.1.0",
+  "type": "module",
+  "description": "每个对话右下角一个悬浮小喇叭：开启后 AI 回复完成，edge-tts 软糯女声（默认晓晓 Neural，可选晓伊等）后台静默念摘要，全程无任何前台窗口；开关状态每个对话独立记忆，新对话默认关闭。预留 CosyVoice 本地音色克隆接口。",
+  "license": "MIT",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./client": "./client.js",
+    "./package.json": "./package.json",
+    "./icon": "./icon.svg"
+  },
+  "files": [
+    "index.js",
+    "client.js",
+    "cordis.patch.yml",
+    "scripts/tts.py",
+    "icon.svg",
+    "README.md"
+  ],
+  "keywords": [
+    "dsh-plugin",
+    "deepseek-harness",
+    "tts",
+    "edge-tts",
+    "voice",
+    "speaker",
+    "horn"
+  ],
+  "engines": {
+    "dsh": ">=0.2.0-rc.1"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  }
+}
