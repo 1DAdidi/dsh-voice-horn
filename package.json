@@ -14,10 +14,14 @@
   "files": [
     "index.js",
     "client.js",
-    "cordis.patch.yml",
+    "lib/voices.js",
     "scripts/tts.py",
+    "scripts/tts_fast.py",
+    "scripts/tts_worker.py",
+    "cordis.patch.yml",
     "icon.svg",
-    "README.md"
+    "README.md",
+    "安装说明.md"
   ],
   "keywords": [
     "dsh-plugin",

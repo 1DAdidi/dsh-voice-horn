@@ -1,0 +1,33 @@
+# ---- 依赖 ----
+node_modules/
+
+# ---- Python 缓存与产物 ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# ---- 本地运行配置 / 状态（含个人设置，不入库）----
+*.local.json
+voice-horn.json
+.env
+.env.*
+
+# ---- 日志 ----
+*.log
+logs/
+
+# ---- 临时音频 / 缓存 ----
+*.mp3
+*.wav
+*.part
+dsh_vh_cache/
+dsh_voice_horn_cache/
+
+# ---- 系统与编辑器 ----
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/

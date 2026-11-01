@@ -160,7 +160,13 @@ function pythonCandidates() {
   const list = []
   if (s.python) list.push(s.python)
   if (process.env.VH_PYTHON) list.push(process.env.VH_PYTHON)
-  list.push('K:\\Program Files (x86)\\python\\python.exe')
+  // 常见 Windows 安装位置（按系统环境变量动态拼接，不绑定任何本机盘符）
+  const pf = process.env['ProgramFiles']
+  const pf86 = process.env['ProgramFiles(x86)']
+  const localApp = process.env['LOCALAPPDATA']
+  if (pf) list.push(join(pf, 'Python311', 'python.exe'), join(pf, 'Python312', 'python.exe'), join(pf, 'Python313', 'python.exe'))
+  if (pf86) list.push(join(pf86, 'Python311', 'python.exe'), join(pf86, 'Python312', 'python.exe'))
+  if (localApp) list.push(join(localApp, 'Programs', 'Python', 'Python311', 'python.exe'), join(localApp, 'Programs', 'Python', 'Python312', 'python.exe'), join(localApp, 'Programs', 'Python', 'Python313', 'python.exe'))
   list.push('python')
   list.push('py')
   return list
